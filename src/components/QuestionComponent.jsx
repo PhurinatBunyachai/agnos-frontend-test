@@ -19,7 +19,7 @@ function QuestionComponent({currentQuestion,onSelectBehavior,selectBehavior}) {
     
   return (
     <div className="bg-white rounded-lg p-10 flex flex-col justify-center">
-        <div className="text-3xl text-center">{currentQuestion.titel}</div>
+        <div className="text-2xl text-center">{currentQuestion?.titel}</div>
         { onReanderQuestion() }
     </div>
   );

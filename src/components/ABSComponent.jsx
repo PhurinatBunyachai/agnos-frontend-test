@@ -18,34 +18,51 @@ import ruqCap from '../assets/images/captions/ruq-active.png'
 import rlqCap from '../assets/images/captions/rlq-active.png'
 function ABSComponent({selectBehavior,onSelectBehavior}) {
   const TYPE = 'abs'
+  // const imags = ['umbilicus','epigastrium','llq','luq','suprapubic','ruq','rlq','all']
   const [active, setActive] = useState({})
-
+  // const onReanderMainImg = () => {
+  //  return imags.map(item => {
+  //     return <img className={`question-img ${(active?.behavior === item || active?.behavior === 'all') ? 'opacity-1' : 'opacity-0'}`} src={item} alt={item} width={600} height={900} />
+  //   })
+  // }
+  // const onReanderCaptionImg = () => {
+  //   return imags.map(item => {
+  //     return <img className={`question-img ${(active?.behavior === item && active?.behavior !== 'all') ? 'opacity-1' : 'opacity-0'}`} src={`${item}Cap`} alt={`${item}Cap`}  width={600} height={900} />
+  //   })
+  // }
   useEffect(() => {
       let currentBehavior = selectBehavior.find(item => item.name = TYPE)
       setActive(currentBehavior)
-      console.log()
   },[selectBehavior])
 
   return (
         <div className="relative">
-            <img src={defaultImg} alt="defaultImg" width={600} height={900}/>
-            <img className={"question-img"} src={umbilicus} alt="umbilicus" width={600} height={900} />
-            <img className={"question-img"} src={epigastrium} alt="epigastrium" width={600} height={900}/>
-            <img className={"question-img"} src={llq} alt="llq" width={600} height={900}/>
-            <img className={"question-img"} src={luq} alt="luq" width={600} height={900}/>
-            <img className={"question-img"} src={suprapubic} alt="suprapubic" width={600} height={900}/>
-            <img className={"question-img"} src={ruq} alt="ruq" width={600} height={900}/>
-            <img className={`question-img ${active?.behavior === 'rlq' ? 'opacity-1' : 'opacity-0'}`} src={rlq} alt="rlq" width={600} height={900}/>
-            <img className={"question-img"} src={all} alt="allAbs" width={600} height={900}/>
+            <img src={defaultImg} alt="defaultImg" width={600} height={900} />
+            <img className={`question-img ${(active?.behavior === 'umbilicus' || active?.behavior === 'all') ? 'opacity-1' : 'opacity-0'}`} src={umbilicus} alt="umbilicus" width={600} height={900} />
+            <img className={`question-img ${(active?.behavior === 'epigastrium' || active?.behavior === 'all') ? 'opacity-1' : 'opacity-0'}`} src={epigastrium} alt="epigastrium" width={600} height={900}/>
+            <img className={`question-img ${(active?.behavior === 'llq' || active?.behavior === 'all') ? 'opacity-1' : 'opacity-0'}`} src={llq} alt="llq" width={600} height={900}/>
+            <img className={`question-img ${(active?.behavior === 'luq' || active?.behavior === 'all') ? 'opacity-1' : 'opacity-0'}`} src={luq} alt="luq" width={600} height={900}/>
+            <img className={`question-img ${(active?.behavior === 'suprapubic' || active?.behavior === 'all') ? 'opacity-1' : 'opacity-0'}`} src={suprapubic} alt="suprapubic" width={600} height={900}/>
+            <img className={`question-img ${(active?.behavior === 'ruq' || active?.behavior === 'all') ? 'opacity-1' : 'opacity-0'}`} src={ruq} alt="ruq" width={600} height={900}/>
+            <img className={`question-img ${(active?.behavior === 'rlq' || active?.behavior === 'all') ? 'opacity-1' : 'opacity-0'}`} src={rlq} alt="rlq" width={600} height={900}/>
+            <img className={`question-img ${active?.behavior === 'all' ? 'opacity-1' : 'opacity-0'}`} src={all} alt="allAbs" width={600} height={900}/>
 
-            <img className={"question-img"} src={umbilicusCap} alt="umbilicusCap" width={600} height={900}/>
-            <img className={"question-img"} src={epigastriumCap} alt="epigastriumCap" width={600} height={900}/>
-            <img className={"question-img"} src={llqCap} alt="llqCap" width={600} height={900}/>
-            <img className={"question-img"} src={luqCap} alt="luqCap" width={600} height={900}/>
-            <img className={"question-img"} src={suprapubicCap} alt="suprapubicCap" width={600} height={900}/>
-            <img className={"question-img"} src={ruqCap} alt="ruqCap" width={600} height={900}/>
-            <img className={`question-img ${active?.behavior === 'rlq' ? 'opacity-1' : 'opacity-0'}`} src={rlqCap} alt="rlqCap" width={600} height={900} onClick={() => onSelectBehavior({type: TYPE , behavior:'rlq'})}/>
-            {/* <div className='absolute top-0 left-0 bg-red-300 w-10 h-10 rounded cursor-pointer'></div> */}
+            <img className={`question-img ${(active?.behavior === 'umbilicus' && active?.behavior !== 'all') ? 'opacity-1' : 'opacity-0'}`} src={umbilicusCap} alt="umbilicusCap" width={600} height={900}/>
+            <img className={`question-img ${(active?.behavior === 'epigastrium' && active?.behavior !== 'all') ? 'opacity-1' : 'opacity-0'}`} src={epigastriumCap} alt="epigastriumCap" width={600} height={900}/>
+            <img className={`question-img ${(active?.behavior === 'llq' && active?.behavior !== 'all') ? 'opacity-1' : 'opacity-0'}`} src={llqCap} alt="llqCap" width={600} height={900}/>
+            <img className={`question-img ${(active?.behavior === 'luq' && active?.behavior !== 'all') ? 'opacity-1' : 'opacity-0'}`} src={luqCap} alt="luqCap" width={600} height={900}/>
+            <img className={`question-img ${(active?.behavior === 'suprapubic' && active?.behavior !== 'all') ? 'opacity-1' : 'opacity-0'}`} src={suprapubicCap} alt="suprapubicCap" width={600} height={900}/>
+            <img className={`question-img ${(active?.behavior === 'ruq' && active?.behavior !== 'all') ? 'opacity-1' : 'opacity-0'}`} src={ruqCap} alt="ruqCap" width={600} height={900}/>
+            <img className={`question-img ${(active?.behavior === 'rlq' && active?.behavior !== 'all') ? 'opacity-1' : 'opacity-0'}`} src={rlqCap} alt="rlqCap" />
+
+            <div className='rlq-area' onClick={() => onSelectBehavior({type: TYPE , behavior:'rlq'})}/>
+            <div className='epigastrium-area' onClick={() => onSelectBehavior({type: TYPE , behavior:'epigastrium'})}/>
+            <div className='umbilicus-area' onClick={() => onSelectBehavior({type: TYPE , behavior:'umbilicus'})}/>
+            <div className='llq-area' onClick={() => onSelectBehavior({type: TYPE , behavior:'llq'})}/>
+            <div className='luq-area' onClick={() => onSelectBehavior({type: TYPE , behavior:'luq'})}/>
+            <div className='suprapubic-area' onClick={() => onSelectBehavior({type: TYPE , behavior:'suprapubic'})}/>
+            <div className='ruq-area' onClick={() => onSelectBehavior({type: TYPE , behavior:'ruq'})}/>
+            <div className='abs-all-area' onClick={() => onSelectBehavior({type: TYPE , behavior:'all'})}/>
         </div>
   );
 }

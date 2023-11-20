@@ -29,4 +29,28 @@
     .question-img{
         @apply absolute top-0 left-0;
     }
+    .rlq-area{
+        @apply absolute top-[400px] left-[210px] max-sm:top-[200px] max-sm:left-[100px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+    }
+    .epigastrium-area{
+        @apply absolute top-[265px] left-[270px] max-sm:top-[130px] max-sm:left-[135px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+    }
+    .umbilicus-area{
+        @apply absolute top-[355px] left-[270px] max-sm:top-[175px] max-sm:left-[135px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+    }
+    .llq-area{
+        @apply absolute top-[390px] left-[330px] max-sm:top-[200px] max-sm:left-[170px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+    }
+    .luq-area{
+        @apply absolute top-[320px] left-[330px] max-sm:top-[150px] max-sm:left-[170px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+    }
+    .suprapubic-area{
+        @apply absolute top-[430px] left-[270px] max-sm:top-[220px] max-sm:left-[135px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+    }
+    .ruq-area{
+        @apply absolute top-[320px] left-[210px] max-sm:top-[155px] max-sm:left-[100px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+    }
+    .abs-all-area{
+        @apply absolute top-[620px] left-[190px] max-sm:top-[320px] max-sm:left-[100px]  w-[12rem] h-[4rem] max-sm:w-[6rem] max-sm:h-[2rem] rounded cursor-pointer;
+    }
 }
