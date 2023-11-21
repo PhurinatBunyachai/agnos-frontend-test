@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
 import ABSComponent from './ABSComponent'
 import FingerComponent from './FingerComponent'
+import ResultComponent from './ResultComponent'
 function QuestionComponent({currentQuestion,onSelectBehavior,selectBehavior}) {
 
     const onReanderQuestion = () => {
@@ -9,13 +9,12 @@ function QuestionComponent({currentQuestion,onSelectBehavior,selectBehavior}) {
                 return <ABSComponent selectBehavior={selectBehavior} onSelectBehavior={onSelectBehavior}/>
             case 'finger':
                 return <FingerComponent selectBehavior={selectBehavior} onSelectBehavior={onSelectBehavior}/>
+            case 'result':
+                return <ResultComponent selectBehavior={selectBehavior} />
             default:
                 return;
         }
     }
-    useEffect(() => {
-        onReanderQuestion()
-    })
     
   return (
     <div className="bg-white rounded-lg p-10 flex flex-col justify-center">

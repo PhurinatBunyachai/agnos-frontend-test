@@ -11,7 +11,7 @@
 
 @layer components{
     .main-container {
-        @apply bg-gradient-to-r from-gradient-l to-gradient-r w-screen h-screen grid grid-cols-1 content-center justify-items-center
+        @apply bg-gradient-to-r from-gradient-l to-gradient-r  grid grid-cols-1 content-center justify-items-center w-screen h-screen;
     }
 
     .question-container {
@@ -26,31 +26,85 @@
     .btn-primary{
         @apply bg-main text-white hover:opacity-95;
     }
+    .btn-back{
+        @apply bg-yellow-400 text-white hover:opacity-95;
+    }
+    .btn-submit{
+        @apply bg-green-500 text-white hover:opacity-95;
+    }
     .question-img{
         @apply absolute top-0 left-0;
     }
     .rlq-area{
-        @apply absolute top-[400px] left-[210px] max-sm:top-[200px] max-sm:left-[100px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+        @apply absolute top-[325px] left-[165px] max-sm:top-[200px] max-sm:left-[100px] max-sm:hidden w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
     }
     .epigastrium-area{
-        @apply absolute top-[265px] left-[270px] max-sm:top-[130px] max-sm:left-[135px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+        @apply absolute top-[215px] left-[220px] max-sm:top-[130px] max-sm:left-[135px] max-sm:hidden w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
     }
     .umbilicus-area{
-        @apply absolute top-[355px] left-[270px] max-sm:top-[175px] max-sm:left-[135px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+        @apply absolute top-[290px] left-[220px] max-sm:top-[175px] max-sm:left-[135px] max-sm:hidden w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
     }
     .llq-area{
-        @apply absolute top-[390px] left-[330px] max-sm:top-[200px] max-sm:left-[170px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+        @apply absolute top-[320px] left-[270px] max-sm:top-[200px] max-sm:left-[170px] max-sm:hidden w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
     }
     .luq-area{
-        @apply absolute top-[320px] left-[330px] max-sm:top-[150px] max-sm:left-[170px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+        @apply absolute top-[260px] left-[270px] max-sm:top-[150px] max-sm:left-[170px] max-sm:hidden w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
     }
     .suprapubic-area{
-        @apply absolute top-[430px] left-[270px] max-sm:top-[220px] max-sm:left-[135px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+        @apply absolute top-[360px] left-[220px] max-sm:top-[220px] max-sm:left-[135px] max-sm:hidden w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
     }
     .ruq-area{
-        @apply absolute top-[320px] left-[210px] max-sm:top-[155px] max-sm:left-[100px] w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
+        @apply absolute top-[260px] left-[170px] max-sm:top-[155px] max-sm:left-[100px] max-sm:hidden w-10 h-10 max-sm:w-[2rem] max-sm:h-[2rem] rounded cursor-pointer;
     }
     .abs-all-area{
-        @apply absolute top-[620px] left-[190px] max-sm:top-[320px] max-sm:left-[100px]  w-[12rem] h-[4rem] max-sm:w-[6rem] max-sm:h-[2rem] rounded cursor-pointer;
+        @apply absolute top-[515px] left-[160px] max-sm:top-[320px] max-sm:left-[100px] max-sm:hidden  w-[10rem] h-[3rem] max-sm:w-[6rem] max-sm:h-[2rem] rounded cursor-pointer;
+    }
+
+    .dip-1{
+        @apply absolute top-[135px] left-[100px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .dip-2{
+        @apply absolute top-[70px] left-[160px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .dip-3{
+        @apply absolute top-[40px] left-[210px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .dip-4{
+        @apply absolute top-[60px] left-[270px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+
+    .pip-1{
+        @apply absolute top-[180px] left-[120px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .pip-2{
+        @apply absolute top-[130px] left-[160px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .pip-3{
+        @apply absolute top-[110px] left-[220px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .pip-4{
+        @apply absolute top-[120px] left-[270px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .pip-5{
+        @apply absolute top-[230px] left-[380px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+
+    .mcp-1{
+        @apply absolute top-[230px] left-[135px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .mcp-2{
+        @apply absolute top-[220px] left-[180px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .mcp-3{
+        @apply absolute top-[200px] left-[225px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .mcp-4{
+        @apply absolute top-[200px] left-[270px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .mcp-5{
+        @apply absolute top-[300px] left-[340px] max-sm:hidden w-10 h-10 rounded cursor-pointer;
+    }
+    .finger-all-area{
+        @apply absolute top-[535px] left-[80px] max-sm:hidden w-[21rem] h-11 rounded cursor-pointer;
     }
 }

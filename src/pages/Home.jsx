@@ -12,6 +12,11 @@ function Home() {
       'name': 'finger',
       'titel': 'จุดไหนที่คุณปวดนิ้วมากที่สุด',
       'order': 2
+    },
+    {
+      'name': 'result',
+      'titel': 'สรุปอาการ',
+      'order': 3
     }
   ]);
   const [selectBehavior,setSelectBehavior] = useState([])
@@ -26,14 +31,22 @@ function Home() {
       setCurrentQuestion(allQuestion[(--indexQuestion)])
     }
   }
+  const onSubmitQuestion = () =>{
+    alert('ส่งอาการเรียบร้อย')
+    onResetQuestion()
+  }
+  const onResetQuestion = () =>{
+    setCurrentQuestion(allQuestion[0])
+    setSelectBehavior([])
+  }
   const onSelectBehavior = ({type = '' , behavior = ''}) =>{
-    const indexBehavior = selectBehavior.findIndex(item => item.type === type)
-    if(indexBehavior >= 0){
-      selectBehavior[indexBehavior] = {type , behavior }
-    }else{
-      selectBehavior.push({type, behavior})
-    }
-    setSelectBehavior([...selectBehavior])
+      const indexBehavior = selectBehavior.findIndex(item => item.type === type)
+      if(indexBehavior >= 0){
+        selectBehavior[indexBehavior] = {type , behavior }
+        setSelectBehavior([...selectBehavior])
+      }else{
+        setSelectBehavior([...selectBehavior,{type, behavior}])
+      }
   }
   useEffect(() => {
     const indexQuestion = allQuestion.findIndex(item => item.name === currentQuestion.name)
@@ -54,9 +67,26 @@ function Home() {
             onSelectBehavior={onSelectBehavior}
             selectBehavior={selectBehavior}
           />
-          <button type="button" className="btn btn-primary mx-1 mt-3" onClick={() => {onNextQuestion()}}>
-              ต่อไป
-          </button>
+          {currentQuestion.order === 3 && (
+            <>
+              <button type="button" className="btn btn-submit mx-1 mt-3" onClick={() => onSubmitQuestion()}>
+                    ส่งผล
+              </button>
+            </>
+          )}
+          {currentQuestion.order !== 3 && (
+            <button type="button" className="btn btn-primary mx-1 mt-3" onClick={() => onNextQuestion()}>
+                ต่อไป
+            </button>
+          )}
+          {(currentQuestion.order > 1)  
+            && (
+              <button type="button" className="btn btn-back mx-1 mt-3" onClick={() => onBack()}>
+                  กลับ
+              </button>
+            )
+          }
+          
         </div>
       </div>  
     </div>
